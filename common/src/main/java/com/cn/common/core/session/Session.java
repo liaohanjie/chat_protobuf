@@ -19,6 +19,12 @@ public interface Session {
 	void setAttachment(Object attachment);
 	
 	/**
+	 * 移除绑定对象
+	 * @return
+	 */
+	void removeAttachment();
+	
+	/**
 	 * 向会话中写入消息
 	 * @param message
 	 */

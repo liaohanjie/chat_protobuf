@@ -66,7 +66,7 @@ public class PlayerServiceImpl implements PlayerService {
 		boolean onlinePlayer = SessionManager.isOnlinePlayer(player.getPlayerId());
 		if (onlinePlayer) {
 			Session oldSession = SessionManager.removeSession(player.getPlayerId());
-			oldSession.setAttachment(null);
+			oldSession.removeAttachment();
 			// 踢下线
 			oldSession.close();
 		}

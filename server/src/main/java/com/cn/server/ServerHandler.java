@@ -109,7 +109,8 @@ public class ServerHandler extends SimpleChannelHandler {
 	 */
 	@Override
 	public void channelDisconnected(ChannelHandlerContext ctx, ChannelStateEvent e) throws Exception {
-		Object object = ctx.getChannel().getAttachment();
+		Session session = new SessionImpl(ctx.getChannel());
+		Object object = session.getAttachment();
 		if(object != null){
 			Player player = (Player)object;
 			SessionManager.removeSession(player.getPlayerId());
