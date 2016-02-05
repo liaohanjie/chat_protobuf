@@ -311,7 +311,7 @@ public final class ChatModule {
         return com.cn.common.module.chat.proto.ChatModule.internal_static_PrivateChatRequest_fieldAccessorTable;
       }
       
-      // Construct using com.cn.module.chat.proto.ChatModule.PrivateChatRequest.newBuilder()
+      // Construct using com.cn.common.module.chat.proto.ChatModule.PrivateChatRequest.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -733,7 +733,7 @@ public final class ChatModule {
         return com.cn.common.module.chat.proto.ChatModule.internal_static_PublicChatRequest_fieldAccessorTable;
       }
       
-      // Construct using com.cn.module.chat.proto.ChatModule.PublicChatRequest.newBuilder()
+      // Construct using com.cn.common.module.chat.proto.ChatModule.PublicChatRequest.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -1260,7 +1260,7 @@ public final class ChatModule {
         return com.cn.common.module.chat.proto.ChatModule.internal_static_ChatResponse_fieldAccessorTable;
       }
       
-      // Construct using com.cn.module.chat.proto.ChatModule.ChatResponse.newBuilder()
+      // Construct using com.cn.common.module.chat.proto.ChatModule.ChatResponse.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -1657,8 +1657,8 @@ public final class ChatModule {
       "Id\030\001 \002(\003\022\026\n\016sendPlayerName\030\002 \002(\t\022\032\n\020targ" +
       "etPlayerName\030\003 \001(\t:\000\022#\n\010chatType\030\004 \002(\0162\t" +
       ".ChatType:\006PUBLIC\022\017\n\007message\030\005 \002(\t*#\n\010Ch" +
-      "atType\022\013\n\007PRIVATE\020\000\022\n\n\006PUBLIC\020\001B&\n\030com.c" +
-      "n.module.chat.protoB\nChatModule"
+      "atType\022\013\n\007PRIVATE\020\000\022\n\n\006PUBLIC\020\001B-\n\037com.c" +
+      "n.common.module.chat.protoB\nChatModule"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {

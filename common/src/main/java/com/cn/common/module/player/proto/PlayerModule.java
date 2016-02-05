@@ -264,7 +264,7 @@ public final class PlayerModule {
         return com.cn.common.module.player.proto.PlayerModule.internal_static_LoginRequest_fieldAccessorTable;
       }
       
-      // Construct using com.cn.module.player.proto.PlayerModule.LoginRequest.newBuilder()
+      // Construct using com.cn.common.module.player.proto.PlayerModule.LoginRequest.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -749,7 +749,7 @@ public final class PlayerModule {
         return com.cn.common.module.player.proto.PlayerModule.internal_static_RegisterRequest_fieldAccessorTable;
       }
       
-      // Construct using com.cn.module.player.proto.PlayerModule.RegisterRequest.newBuilder()
+      // Construct using com.cn.common.module.player.proto.PlayerModule.RegisterRequest.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -1264,7 +1264,7 @@ public final class PlayerModule {
         return com.cn.common.module.player.proto.PlayerModule.internal_static_PlayerResponse_fieldAccessorTable;
       }
       
-      // Construct using com.cn.module.player.proto.PlayerModule.PlayerResponse.newBuilder()
+      // Construct using com.cn.common.module.player.proto.PlayerModule.PlayerResponse.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -1585,8 +1585,8 @@ public final class PlayerModule {
       " \002(\t\"7\n\017RegisterRequest\022\022\n\nplayerName\030\001 " +
       "\002(\t\022\020\n\010passward\030\002 \002(\t\"R\n\016PlayerResponse\022" +
       "\020\n\010playerId\030\001 \002(\003\022\022\n\nplayerName\030\002 \002(\t\022\r\n" +
-      "\005level\030\003 \002(\005\022\013\n\003exp\030\004 \002(\005B*\n\032com.cn.modu" +
-      "le.player.protoB\014PlayerModule"
+      "\005level\030\003 \002(\005\022\013\n\003exp\030\004 \002(\005B1\n!com.cn.comm" +
+      "on.module.player.protoB\014PlayerModule"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
