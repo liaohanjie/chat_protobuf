@@ -1,7 +1,6 @@
 package com.cn.server.module.player.service;
 
-import org.jboss.netty.channel.Channel;
-
+import com.cn.common.core.session.Session;
 import com.cn.common.module.player.proto.PlayerModule.PlayerResponse;
 /**
  * 玩家服务
@@ -17,7 +16,7 @@ public interface PlayerService {
 	 * @param passward
 	 * @return
 	 */
-	public PlayerResponse registerAndLogin(Channel channel, String playerName, String passward);
+	public PlayerResponse registerAndLogin(Session session, String playerName, String passward);
 	
 	
 	/**
@@ -26,6 +25,6 @@ public interface PlayerService {
 	 * @param passward
 	 * @return
 	 */
-	public PlayerResponse login(Channel channel, String playerName, String passward);
+	public PlayerResponse login(Session session, String playerName, String passward);
 
 }

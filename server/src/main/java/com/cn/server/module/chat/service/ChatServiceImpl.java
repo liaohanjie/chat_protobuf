@@ -6,12 +6,12 @@ import org.springframework.stereotype.Component;
 
 import com.cn.common.core.exception.ErrorCodeException;
 import com.cn.common.core.model.ResultCode;
+import com.cn.common.core.session.SessionManager;
 import com.cn.common.module.ModuleId;
 import com.cn.common.module.chat.ChatCmd;
 import com.cn.common.module.chat.proto.ChatModule;
 import com.cn.common.module.chat.proto.ChatModule.ChatResponse;
 import com.cn.common.module.chat.proto.ChatModule.ChatType;
-import com.cn.server.channel.ChannelManager;
 import com.cn.server.module.player.dao.PlayerDao;
 import com.cn.server.module.player.dao.entity.Player;
 /**
@@ -32,7 +32,7 @@ public class ChatServiceImpl implements ChatService{
 		
 		
 		//获取所有在线玩家
-		Set<Long> onlinePlayers = ChannelManager.getOnlinePlayers();
+		Set<Long> onlinePlayers = SessionManager.getOnlinePlayers();
 		
 		//创建消息对象
 		ChatResponse chatResponse = ChatModule.ChatResponse.newBuilder()
@@ -44,7 +44,7 @@ public class ChatServiceImpl implements ChatService{
 		
 		//发送消息
 		for(long targetPlayerId : onlinePlayers){
-			ChannelManager.sendMessage(targetPlayerId, ModuleId.CHAT, ChatCmd.PUSHCHAT, chatResponse);
+			SessionManager.sendMessage(targetPlayerId, ModuleId.CHAT, ChatCmd.PUSHCHAT, chatResponse);
 		}
 		
 	}
@@ -66,7 +66,7 @@ public class ChatServiceImpl implements ChatService{
 		}
 		
 		//判断对方是否在线
-		if(!ChannelManager.isOnlinePlayer(playerId)){
+		if(!SessionManager.isOnlinePlayer(targetPlayerId)){
 			throw new ErrorCodeException(ResultCode.PLAYER_NO_ONLINE);
 		}
 		
@@ -80,8 +80,8 @@ public class ChatServiceImpl implements ChatService{
 				.build();
 		
 		//给目标对象发送消息
-		ChannelManager.sendMessage(targetPlayerId, ModuleId.CHAT, ChatCmd.PUSHCHAT, chatResponse);
+		SessionManager.sendMessage(targetPlayerId, ModuleId.CHAT, ChatCmd.PUSHCHAT, chatResponse);
 		//给自己也回一个(偷懒做法)
-		ChannelManager.sendMessage(playerId, ModuleId.CHAT, ChatCmd.PUSHCHAT, chatResponse);
+		SessionManager.sendMessage(playerId, ModuleId.CHAT, ChatCmd.PUSHCHAT, chatResponse);
 	}
 }

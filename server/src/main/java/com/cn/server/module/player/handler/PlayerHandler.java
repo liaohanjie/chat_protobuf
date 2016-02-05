@@ -1,10 +1,9 @@
 package com.cn.server.module.player.handler;
 
-import org.jboss.netty.channel.Channel;
-
 import com.cn.common.core.annotion.SocketCommand;
 import com.cn.common.core.annotion.SocketModule;
 import com.cn.common.core.model.Result;
+import com.cn.common.core.session.Session;
 import com.cn.common.module.ModuleId;
 import com.cn.common.module.player.PlayerCmd;
 import com.cn.common.module.player.proto.PlayerModule.LoginRequest;
@@ -21,21 +20,21 @@ public interface PlayerHandler {
 	
 	/**
 	 * 创建并登录帐号
-	 * @param channel
+	 * @param session
 	 * @param data {@link RegisterRequest}
 	 * @return
 	 */
 	@SocketCommand(cmd = PlayerCmd.REGISTER_AND_LOGIN)
-	public Result<PlayerResponse> registerAndLogin(Channel channel, byte[] data);
+	public Result<PlayerResponse> registerAndLogin(Session session, byte[] data);
 	
 
 	/**
 	 * 登录帐号
-	 * @param channel
+	 * @param session
 	 * @param data {@link LoginRequest}
 	 * @return
 	 */
 	@SocketCommand(cmd = PlayerCmd.LOGIN)
-	public Result<PlayerResponse> login(Channel channel, byte[] data);
+	public Result<PlayerResponse> login(Session session, byte[] data);
 
 }
